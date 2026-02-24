@@ -18,15 +18,14 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
   },
   {
     id: 2,
-    category: "协同平台接入",
-    softwareName: "飞书 (Lark)",
-    description: "绩效考核与店铺对接的数字化枢纽。",
+    category: "运营店铺管理系统",
+    softwareName: "运营店铺管理系统（飞书升级版）",
+    description: "在呈尚策划工具箱内直接打开即可进入系统。",
     iconName: 'MessageSquare',
     details: [
-      "完成账号注册。",
-      "手机端必须下载APP以接收实时消息。",
-      "主要用于团队沟通、绩效追踪及店铺对接。",
-      "注册并授权成功后登录：https://my.feishu.cn/base/XA8gbtw5naT0I8sDczbcJc9vnFz?table=tblRPQfakGqK4xhp&view=vewM1Y9Vem"
+      "在呈尚策划工具箱中打开“运营店铺管理系统（飞书升级版）”。",
+      "直接打开即可进入系统。",
+      "登录密码：csch903。"
     ]
   },
   {
