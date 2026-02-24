@@ -1,4 +1,5 @@
 import { OnboardingStep } from './types';
+import { MERCHANT_GROUP_REPLY_SCRIPT_CONTENT } from './merchant-reply-script';
 
 export const APP_TITLE = "新运营入职操作手册";
 export const APP_SUBTITLE = "呈尚策划 · 标准化作业流程指南";
@@ -231,11 +232,26 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
       "支持长截图和屏幕录制，便于留存素材。",
       "授权验证 name：bluman serial/序列号/注册码：VPISCJULXUFGDDXYAUYF"
     ]
+  },
+  {
+    id: 6,
+    category: "运营在商家群回复话术合集",
+    softwareName: "运营在商家群回复话术合集",
+    description: "点击按钮即可弹窗查看完整话术内容。",
+    iconName: 'MessageSquare',
+    details: [
+      "内容来源：运营在商家群回复话术文档。",
+      "可在弹窗中查看并复制完整内容。"
+    ],
+    modalButton: {
+      label: "查看话术合集",
+      content: MERCHANT_GROUP_REPLY_SCRIPT_CONTENT
+    }
   }
 ];
 
 export const CRITICAL_NOTICE: OnboardingStep = {
-  id: 6,
+  id: 7,
   category: "关键里程碑",
   softwareName: "外卖店铺完整运营流程",
   description: "在深入使用工具箱前，必须研读此流程文档。",
