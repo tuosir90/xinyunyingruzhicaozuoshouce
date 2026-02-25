@@ -142,6 +142,7 @@ const StepCard: React.FC<StepCardProps> = ({ step, isLast }) => {
     Camera,
     BookOpen
   }[step.iconName];
+  const isMerchantReplyModal = step.modalButton?.label === '查看话术合集';
 
   return (
     <div className="relative flex gap-6 pb-12 group last:pb-0">
@@ -211,9 +212,14 @@ const StepCard: React.FC<StepCardProps> = ({ step, isLast }) => {
       {/* Modal */}
       {step.modalButton && isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setIsModalOpen(false)}>
-          <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] flex flex-col" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-4 border-b border-slate-200">
-              <h3 className="text-lg font-bold text-slate-800">{step.modalButton.label}</h3>
+          <div
+            className={`rounded-xl shadow-2xl max-w-4xl w-full max-h-[80vh] flex flex-col ${
+              isMerchantReplyModal ? 'bg-slate-900 text-white border border-slate-700' : 'bg-white'
+            }`}
+            onClick={e => e.stopPropagation()}
+          >
+            <div className={`flex items-center justify-between p-4 ${isMerchantReplyModal ? 'border-b border-slate-700' : 'border-b border-slate-200'}`}>
+              <h3 className={`text-lg font-bold ${isMerchantReplyModal ? 'text-white' : 'text-slate-800'}`}>{step.modalButton.label}</h3>
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => copyToClipboard(step.modalButton!.content)}
@@ -222,13 +228,20 @@ const StepCard: React.FC<StepCardProps> = ({ step, isLast }) => {
                   {copiedText === step.modalButton.content ? <Check size={16} /> : <Copy size={16} />}
                   {copiedText === step.modalButton.content ? '已复制' : '复制代码'}
                 </button>
-                <button onClick={() => setIsModalOpen(false)} className="p-1 hover:bg-slate-100 rounded-lg transition-colors">
-                  <X size={20} className="text-slate-500" />
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className={`p-1 rounded-lg transition-colors ${isMerchantReplyModal ? 'hover:bg-slate-800' : 'hover:bg-slate-100'}`}
+                >
+                  <X size={20} className={isMerchantReplyModal ? 'text-slate-300' : 'text-slate-500'} />
                 </button>
               </div>
             </div>
             <div className="p-4 overflow-auto flex-1">
-              <pre className="bg-slate-900 text-green-400 p-4 rounded-lg text-sm overflow-x-auto whitespace-pre-wrap font-mono">
+              <pre
+                className={`p-4 rounded-lg text-sm overflow-x-auto whitespace-pre-wrap font-mono ${
+                  isMerchantReplyModal ? 'bg-slate-800 text-white' : 'bg-slate-900 text-green-400'
+                }`}
+              >
                 {step.modalButton.content}
               </pre>
             </div>
