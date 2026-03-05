@@ -32,13 +32,13 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
   {
     id: 3,
     category: "多平台管理终端",
-    softwareName: "外星人 (Alien)",
+    softwareName: "呈尚店铺助手",
     description: "实现美团、淘宝及闪购店铺的高效集中管理。",
     iconName: 'Rocket',
     details: [
       "用于绑定和管理多平台店铺。",
       "请向主管获取初始配置参数。",
-      "登录账号：15071766312 密码：94312smo"
+      "登录账号：呈尚策划 密码：chengshangcehua888"
     ]
   },
   {
